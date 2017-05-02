@@ -2,6 +2,23 @@
 Repository for Team 5 AVC
 
 
-###Week One Checklist:
-Geordie - Set up team Github Repository
+###Team Roles
+ - Hardware: Hendrick
+ - Software: Kevin(Architect), Geordie, Felix
+ - Management: Shivaash
+ - Freelance: Zizi
 
+###Week One Goals
+- Have the robot moving in a straight line
+- Create objectives for the next 3 weeks
+- Complete team plan
+
+###Week One Checklist
+ - [ ] Everyone - Sign the team agreement 
+ - [x] Geordie - Set up team Github Repository
+ - [ ] Geordie - Complete code for straight line movement
+ - [ ] Shivaash - Complete team plan and agreement and get members to sign
+ - [ ] Hendrick - Complete a prototype that can hold the pi and allow it to drive
+ - [ ] Felix - 
+ - [ ] Kevin - 
+ - [ ] Zizi - 
