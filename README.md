@@ -17,9 +17,10 @@ Repository for Team 5 AVC
  - [ ] Everyone - Sign the team agreement 
  - [x] Geordie - Set up team Github Repository
  - [ ] Geordie - Keep GitHub up to date
- - [ ] Geordie - Complete code for straight line movement
- - [ ] Shivaash - Complete team plan and agreement and get members to sign
- - [ ] Hendrick - Complete a prototype that can hold the pi and allow it to drive
- - [ ] Felix - 
- - [ ] Kevin - 
- - [ ] Zizi - 
+ - [ ] Geordie - Complete camera image processing
+ - [ ] Kevin - Complete code for straight line movement
+ - [x] Shivaash - Complete team plan and agreement
+ - [ ] Shivaash - Get members to sign team agreement
+ - [ ] Hendrick - Get a basic chassis plan sorted
+ - [ ] Felix - Consult on team plan and support coding
+ - [x] Zizi - Consult on team plan
