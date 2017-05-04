@@ -1,5 +1,5 @@
 # ENGR101-Team5AVC
-Repository for Team 5 AVC
+Repository for Team 5 Autonomous Vehicle Challenge
 
 
 ### Team Roles
