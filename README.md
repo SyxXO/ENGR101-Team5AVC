@@ -2,13 +2,13 @@
 Repository for Team 5 AVC
 
 
-#Team Roles
+## Team Roles
  - Hardware: Hendrick
  - Software: Kevin(Architect), Geordie, Felix
  - Management: Shivaash
  - Freelance: Zizi
 
-#Week One Checklist
+## Week One Checklist
  - [ ] Everyone - Sign the team agreement 
  - [x] Geordie - Set up team Github Repository
  - [ ] Geordie - Keep GitHub up to date
