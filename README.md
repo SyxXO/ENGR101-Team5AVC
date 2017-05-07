@@ -12,12 +12,12 @@ Repository for Team 5 Autonomous Vehicle Challenge
  - [x] Everyone - Sign the team agreement 
  - [x] Geordie - Set up team Github Repository
  - [x] Geordie - Keep GitHub up to date
- - [ ] Geordie - Complete camera image processing
+ - [x] Geordie - Complete camera image processing(For loop definition tbc)
  - [ ] Kevin - Complete code for straight line movement
  - [ ] Kevin - Assign programmers with code objectives
  - [x] Shivaash - Complete team plan and agreement
  - [x] Shivaash - Get members to sign team agreement
- - [ ] Shivaash - Collect team member timetables
+ - [x] Shivaash - Collect team member timetables
  - [ ] Hendrick - Get a basic chassis plan sorted
  - [ ] Felix - Consult on team plan and support coding
- - [ ] Zizi - Consult on team plan and support image processing
+ - [x] Zizi - Consult on team plan and support image processing
