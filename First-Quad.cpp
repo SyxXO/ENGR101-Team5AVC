@@ -7,7 +7,6 @@ int lineDirection(){
 	char sf = 0;    //Scale factor for error value
 	int cnt = 0;    //Counter for pixel rgb loop
 	int sum = 0;    //Sum for white line locator
-	int mlt = -120; //Multiplier for locator bit shifting
 	int max = 0;    //Max rgb value
 	int min = 0;    //Min rgb value
 	int tol = 0;    //Tolerance for b/w values
@@ -17,7 +16,7 @@ int lineDirection(){
 	take_picture();
 	while(cnt<320){
 		pix[cnt] = get_pixel(120,cnt+1,4);
-		cnt=cnt+1;
+		cnt++;
 	}
 	//Need to find the correct way to use a for loop for values in an array
 	//Finds the min and max to calculate tolerance value
