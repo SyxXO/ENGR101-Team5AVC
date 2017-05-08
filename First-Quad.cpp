@@ -4,6 +4,7 @@
 int lineDirection(){
 	init();
 	//Variables
+	char sf = 0;    //Scale factor for error value
 	int cnt = 0;    //Counter for pixel rgb loop
 	int sum = 0;    //Sum for white line locator
 	int mlt = -120; //Multiplier for locator bit shifting
@@ -31,16 +32,15 @@ int lineDirection(){
 	//Determines if black(0) or white(255) for pixels in pix[]
 	for(int a = 0;a>320;a++){
 		if(pix[a]>tol){
-			w[a] = 255;
+			w[a] = 1;
 		}
 		if(pix[a]<tol){
 			w[a] = 0;
 		}
 	}
 	//Caclulates the error value for white line location
-	for(int a = 0;a>320;a++){
-		sum = sum + (w[a]*mlt);
-		mlt++;	
+	for(int a = -160;a>160;a++){
+		sum = sum + (w[a]*a);	
 	}
-	return sum;
+	return sf*sum;
 }
