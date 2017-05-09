@@ -1,11 +1,11 @@
 #include <stdio.h>
 #include "E101.h"
-
+//Line direction needs to sample every tenth pixel instead to spped up the calculation
 int lineDirection(int ht){
 	//Variables
-	char sf = 0;    //Scale factor for error value
-	int cnt = 0;    //Counter for pixel rgb loop
-	int sum = 0;    //Sum for white line locator
+	char sf = 1;    //Scale factor for error value
+	int cnt = 0;     //Counter for pixel rgb loop
+	signed int sum = 0;    //Sum for white line locator
 	int max = 0;    //Max rgb value
 	int min = 0;    //Min rgb value
 	int tol = 0;    //Tolerance for b/w values
@@ -14,12 +14,14 @@ int lineDirection(int ht){
 	//Gets pixel rgb values and stores them in array pix[]
 	take_picture();
 	while(cnt<320){
-		pix[cnt] = get_pixel(ht,cnt+1,4);
+		pix[cnt] = get_pixel(ht,cnt+1,3);
+		//printf("Got pixel %d\n",cnt);
 		cnt++;
 	}
 	//Need to find the correct way to use a for loop for values in an array
 	//Finds the min and max to calculate tolerance value
-	for(int a = 0;a>320;a++){
+	for(int a = 0;a<320;a++){
+		//printf("Stepped into pixel to white conversion loop");
 		if(pix[a]>max){
 			max = pix[a];
 		} else if(pix[a]<min){
@@ -28,24 +30,25 @@ int lineDirection(int ht){
 	}
 	tol = (max+min)/2;
 	//Determines if black(0) or white(255) for pixels in pix[]
-	for(int a = 0;a>320;a++){
+	for(int a = 0;a<320;a++){
 		if(pix[a]>tol){
 			w[a] = 1;
 			//Debug
 			//set_pixel(ht,a,255,255,255);
-		}
-		if(pix[a]<tol){
+			//printf("White Pixel");
+		}else if(pix[a]<tol){
 			w[a] = 0;
 			//Debug
-			//set_pixel(ht,a,0,0,0);
+			//set_pixel(ht,a,1,1,1);
+			//printf("Black Pixel");
 		}
 	}
 	//Caclulates the error value for white line location
-	for(int a = -160;a>160;a++){
+	for(signed int a = -160;a<160;a++){
 		sum = sum + (w[a]*a);	
 	}
 	//Debug
-	//display_picture(10,0);
+	display_picture(10,0);
 	return sf*sum;
 }
 
@@ -56,18 +59,34 @@ int test_camera(int ht){
 	return 0;
 }
 
-int main(){
-	init();
-	test_camera(120);
-	/*int lnPos;
-	lnPos = lineDirection(120);
-	while(true){
-		lnPos = lineDirection(120);
-		if(lnPos<100||lnPos>-100){
-			move_forward();
-		} else{
-			turn_robot(lnPos);
-		}
-	}*/
-	
-}
+//movemont of robot
+   	 int main(){
+   		 init();
+   		 if(sum>0){turn_left;}
+   		 if(sum<0){turn_right;}
+   		 if(sum=0){drive_forward;}
+   		 return 0;}
+   		 
+    //make robot go to forward
+   	 int drive_forward(){
+   		 set_motor(1,255);
+   		 set_motor(2,-255);
+   		 sleep1(0,500000);
+   		 return 0;}
+   	 
+    //make robot go to left
+   	 int turn_left(){
+   		 if(-2025>sum>-765){
+   		 set_motor(1,120);
+   		 set_motor(2,-255);
+   		 sleep1(0,500000);
+   		 return 0;}}
+   		 
+   		 
+    //make robot got to right
+   	 int turn_right(){
+   		 if(2025>sum>765){
+   		 set_motor(1,-255);
+   		 set_motor(2,120);
+   		 sleep1(0,500000);
+   		 return 0;}}
