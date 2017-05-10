@@ -48,7 +48,7 @@ int lineDirection(int ht){
 		sum = sum + (w[a]*a);	
 	}
 	//Debug
-	display_picture(10,0);
+	//display_picture(10,0);
 	return sf*sum;
 }
 
