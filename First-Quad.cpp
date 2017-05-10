@@ -61,9 +61,14 @@ void test_camera(int ht){
 //movemont of robot
    	 int main(){
    		 init();
-   		 if(sum>0){turn_left;}
-   		 if(sum<0){turn_right;}
-   		 if(sum=0){drive_forward;}
+		 int error;
+		 while(true){
+			error = lineDirection(120);
+			if(error>0){turn_left(error);}
+   		 	if(error<0){turn_right(error);}
+   		 	if(error=0){drive_forward;} 
+		 }
+   		 
    		 return 0;}
    		 
     //make robot go to forward
@@ -74,7 +79,7 @@ void test_camera(int ht){
    		 return 0;}
    	 
     //make robot go to left
-   	 int turn_left(){
+   	 int turn_left(int sum){
    		 if(-2025>sum>-765){
    		 set_motor(1,120);
    		 set_motor(2,-255);
@@ -83,7 +88,7 @@ void test_camera(int ht){
    		 
    		 
     //make robot got to right
-   	 int turn_right(){
+   	 int turn_right(int sum){
    		 if(2025>sum>765){
    		 set_motor(1,-255);
    		 set_motor(2,120);
