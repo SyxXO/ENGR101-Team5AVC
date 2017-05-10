@@ -52,11 +52,10 @@ int lineDirection(int ht){
 	return sf*sum;
 }
 
-int test_camera(int ht){
+void test_camera(int ht){
 	int lnPos;
 	lnPos = lineDirection(ht);
 	printf("Position %d\n",lnPos);
-	return 0;
 }
 
 //movemont of robot
