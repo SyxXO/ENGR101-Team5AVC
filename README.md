@@ -31,8 +31,8 @@ Repository for Team 5 Autonomous Vehicle Challenge
 
 ### Week Two Checklist:
  - [ ] Geordie - Main method for maze movements
- - [ ] Zizi - Main method for maze movements
- - [ ] Felix - Movement methods
+ - [ ] Zizi - Movement methods
+ - [ ] Felix - Main method for maze movements
  - [ ] Hendrick - Complete a movable bed for testing later in the week
  - [ ] Shivaash - Assist Hendrick with prototype
  - [ ] Kevin - Assist hendrick with prototype
