@@ -80,17 +80,17 @@ void test_camera(int ht){
    	 
     //make robot go to left
    	 int turn_left(int sum){
-   		 if(-2025>sum>-765){
+   		
    		 set_motor(1,120);
    		 set_motor(2,-255);
    		 sleep1(0,500000);
-   		 return 0;}}
+   		 return 0;}
    		 
    		 
     //make robot got to right
    	 int turn_right(int sum){
-   		 if(2025>sum>765){
+   		 
    		 set_motor(1,-255);
    		 set_motor(2,120);
    		 sleep1(0,500000);
-   		 return 0;}}
+   		 return 0;}
