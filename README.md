@@ -30,7 +30,7 @@ Repository for Team 5 Autonomous Vehicle Challenge
  - Everyone has signed the AVC plan
 
 ### Week Two Checklist:
- - [ ] Geordie - Main method for maze movements
+ - [x] Geordie - Complete image processing and assist with movement and main methods
  - [ ] Zizi - Movement methods
  - [ ] Felix - Main method for maze movements
  - [ ] Hendrick - Complete a movable bed for testing later in the week
