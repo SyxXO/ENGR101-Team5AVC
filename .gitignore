@@ -35,3 +35,5 @@
 
 camera.cpp
 cameracontrol.cpp
+motorlol.cpp
+start.cpp
