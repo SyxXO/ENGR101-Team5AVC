@@ -87,6 +87,37 @@ int turn_right(int error){
    	sleep1(0,500000);
    	return 0;}
 
+//opens the gate
+void wifi_gate(){
+	char ip[15];
+	ip[1] = '1';
+	ip[2] = '3';
+	ip[3] = '0';
+	ip[4] = '.';
+	ip[5] = '1';
+	ip[6] = '9';
+	ip[7] = '5';
+	ip[8] = '.';
+	ip[9] = '6';
+	ip[10] = '.';
+	ip[11] = '1';
+	ip[12] = '9';
+	ip[13] = '6';
+	char password[30];
+	char randomPass[24];
+	connect_to_server(ip,1024);
+	send_to_server(randomPass);
+	receive_from_server(password);
+	password[24] = 'P';
+	password[25] = 'l';
+	password[26] = 'e';
+	password[27] = 'a';
+	password[28] = 's';
+	password[29] = 'e';
+	printf("%s",password);
+	send_to_server(password);
+}
+
 
 
 //movemont of robot
