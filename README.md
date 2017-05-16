@@ -31,8 +31,16 @@ Repository for Team 5 Autonomous Vehicle Challenge
 
 ### Week Two Checklist:
  - [x] Geordie - Complete image processing and assist with movement and main methods
- - [ ] Zizi - Movement methods
+ - [x] Zizi - Movement methods
  - [ ] Felix - Main method for maze movements
  - [ ] Hendrick - Complete a movable bed for testing later in the week
  - [ ] Shivaash - Assist Hendrick with prototype
  - [ ] Kevin - Assist hendrick with prototype
+
+### Week Three Checklist:
+ - [ ] Geordie - Implementation of maze-solving algorithing
+ - [ ] Zizi - Finishing the movement methods and getting it ready for testing
+ - [ ] Kevin - Getting the robot onto the maze and have it succssfully move
+ - [ ] Felix - 
+ - [ ] Shivaash - Assisting Hendrik with the construction and planning possible imrpovements such as for further quadrants
+ - [ ] Hendrik - Testing out the base, and planning possible improvments for the physical build
