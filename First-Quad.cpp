@@ -95,6 +95,15 @@ int drive_backward(){
 	sleep1(0,500000);
    	return 0;}
 
+
+//make robot stop
+ int drive_stop(){
+	 printf("stop");
+	 set_motor_left(0);
+	 set_motor_right(0);
+	 sleep1(0,500000);
+	 return 0;}
+
 //opens the gate
 void wifi_gate(){
 	char ip[15];
@@ -125,6 +134,17 @@ void wifi_gate(){
 	printf("%s",password);
 	send_to_server(password);
 }
+
+
+//adc reading for obstacle
+int adc_reading(){
+	init();
+	int adc_reading;
+	
+	adc_reading = read_analog(0);
+	printf("%d\n",adc_reading);
+	sleep1(0,5000000);
+	return 0;}
 
 
 
