@@ -87,6 +87,14 @@ int turn_right(int error){
    	sleep1(0,500000);
    	return 0;}
 
+//make robot drive backwards
+int drive_backward(){
+	printf("backward");
+	set_motor_left(-255);//needs to make robot turn at an angle to avoid it looping movement//
+	set_motor_right(-255);
+	sleep1(0,500000);
+   	return 0;}
+
 //opens the gate
 void wifi_gate(){
 	char ip[15];
@@ -130,7 +138,9 @@ void wifi_gate(){
 			//if(error>10){turn_left(error);}
    		 	//if(error<-10){turn_right(error);}
    		 	//if(-10<error&&error<10){drive_forward();} 
-   		 	
+   		 	//if(error == 0){
+				//while(error == 0){drive_backward();}
+   		 	//}
 		// }
    		 
    		 return 0;}
