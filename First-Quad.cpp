@@ -144,7 +144,7 @@ int adc_reading(){
 	adc_reading = read_analog(0);
 	printf("%d\n",adc_reading);
 	sleep1(0,5000000);
-	return 0;}
+	return adc_reading;}
 
 
 
@@ -159,7 +159,8 @@ int adc_reading(){
    		 	//if(error<-10){turn_right(error);}
    		 	//if(-10<error&&error<10){drive_forward();} 
    		 	//if(error == 0){
-				//while(error == 0){drive_backward();}
+		if(adc_reading()>400){drive_stop();}	
+		 //while(error == 0){drive_backward();}
    		 	//}
 		// }
    		 
