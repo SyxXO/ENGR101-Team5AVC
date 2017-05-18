@@ -61,51 +61,42 @@ void set_motor_right(int speed){
 	set_motor(2, -speed);
 }
 
-  		 
-//make robot go to forward
-int drive_forward(){
+int drive_forward(){ //make robot go to forward
 	printf("Forward");
    	set_motor_left(255);
    	set_motor_right(255);
    	sleep1(0,500000);
    	return 0;}
    	 
-//make robot go to left
-int turn_left(int error){
+int turn_left(int error){ //make robot go to left
 	printf("Left");
    	set_motor_left(255);
    	//set_motor_right(sf * position);
    	sleep1(0,500000);
    	return 0;}
    		 
-   		 
-//make robot got to right
-int turn_right(int error){
+int turn_right(int error){ //make robot got to right
 	printf("right");
    	//set_motor_left(sf * position);
    	set_motor_right(255);
    	sleep1(0,500000);
    	return 0;}
 
-//make robot drive backwards
-int drive_backward(){
+int drive_backward(){ //make robot drive backwards
 	printf("backward");
 	set_motor_left(-255);//needs to make robot turn at an angle to avoid it looping movement//
 	set_motor_right(-255);
 	sleep1(0,500000);
    	return 0;}
 
-
-//make robot stop
- int drive_stop(){
+ int drive_stop(){ //make robot stop
 	 printf("stop");
 	 set_motor_left(0);
 	 set_motor_right(0);
 	 sleep1(0,500000);
 	 return 0;}
 
-//opens the gate
-void wifi_gate(){
+void wifi_gate(){ //opens the wifi gate
         char ip[15];
         char please[24];
         please[0] = 'P';
@@ -132,26 +123,53 @@ void wifi_gate(){
         send_to_server(please);
         receive_from_server(password);
         send_to_server(password);
-        return 0;
+}
+	
+bool front_wall(){ //detects if there is an obsticle infront of the robot
+	if(read_analog(0)>127){
+		return true;
+	} else {
+		return false;
+	}
 }
 
+bool left_wall(){ //detects if there is an obsticle to the left of the robot
+	if(read_analog(1)>127){
+		return true;
+	} else {
+		return false;
+	}
+}
 
-//adc reading for obstacle
-int adc_reading(){
-	init();
-	int adc_reading;
+bool right_wall(){ //detects if there is an obsticle to the right of the robot
+	if(read_analog(2)>127){
+		return true;
+	} else {
+		return false;
+	}
+}
+
+int main(){
 	
-	adc_reading = read_analog(0);
-	printf("%d\n",adc_reading);
-	sleep1(0,5000000);
-	return adc_reading;}
-
-
-
-//movemont of robot
-   	 int main(){
-   		 init();
-		 int error;
+   	init();
+   	int quadCnt=1;
+   	int error;
+   	while(1=quadCnt){
+		if(front_wall()){
+			wifi_gate();
+			sleep1(0,500000);
+			if(front_wall()){
+				printf("WiFi gate isn't open yet, waiting 2 seconds before trying to move/n");
+				sleep1(2,0);
+				if(front_wall()){
+					printf("WiFi gate didn't open, please check robot/n");
+					return 0;
+				}
+			}
+		} else{
+			error = lineDirection(120);
+		}
+}
 		 //while(true){
 			error = lineDirection(120);
 			display_picture(5,0);
@@ -159,7 +177,7 @@ int adc_reading(){
    		 	//if(error<-10){turn_right(error);}
    		 	//if(-10<error&&error<10){drive_forward();} 
    		 	//if(error == 0){
-		if(adc_reading()>400){drive_stop();}	
+		//if(adc_reading()>400){drive_stop();}	
 		 //while(error == 0){drive_backward();}
    		 	//}
 		// }
