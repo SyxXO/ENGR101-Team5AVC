@@ -106,33 +106,33 @@ int drive_backward(){
 
 //opens the gate
 void wifi_gate(){
-	char ip[15];
-	ip[1] = '1';
-	ip[2] = '3';
-	ip[3] = '0';
-	ip[4] = '.';
-	ip[5] = '1';
-	ip[6] = '9';
-	ip[7] = '5';
-	ip[8] = '.';
-	ip[9] = '6';
-	ip[10] = '.';
-	ip[11] = '1';
-	ip[12] = '9';
-	ip[13] = '6';
-	char password[30];
-	char randomPass[24];
-	connect_to_server(ip,1024);
-	send_to_server(randomPass);
-	receive_from_server(password);
-	password[24] = 'P';
-	password[25] = 'l';
-	password[26] = 'e';
-	password[27] = 'a';
-	password[28] = 's';
-	password[29] = 'e';
-	printf("%s",password);
-	send_to_server(password);
+        char ip[15];
+        char please[24];
+        please[0] = 'P';
+        please[1] = 'l';
+        please[2] = 'e';
+        please[3] = 'a';
+        please[4] = 's';
+        please[5] = 'e';
+        ip[0] = '1';
+        ip[1] = '3';
+        ip[2] = '0';
+        ip[3] = '.';
+        ip[4] = '1';
+        ip[5] = '9';
+        ip[6] = '5';
+        ip[7] = '.';
+        ip[8] = '6';
+        ip[9] = '.';
+        ip[10] = '1';
+        ip[11] = '9';
+        ip[12] = '6';
+        char password[30];
+        connect_to_server(ip,1024);
+        send_to_server(please);
+        receive_from_server(password);
+        send_to_server(password);
+        return 0;
 }
 
 
