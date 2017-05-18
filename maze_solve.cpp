@@ -2,8 +2,23 @@
 #include "E101.h"
 
 String maze_solve(Boolean left, Boolean right, Boolean forward){
-
-
-//Can return "f" "b" "l" "r"
-return "";
+  if (left){
+    return "f";
+  }
+  else if (right){
+    return "f";
+  }
+  else if (forward){
+    return "l";
+  }
+  else if (left && right){
+    return "f";
+  }
+  else if (left && forward){
+    return "r";
+  }
+  else if (right && forward){
+    return "l";
+  }
+ 
 }
