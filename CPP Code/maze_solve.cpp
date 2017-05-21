@@ -1,24 +1,24 @@
 #include <stdio.h>
 #include "E101.h"
 
-String maze_solve(Boolean left, Boolean right, Boolean forward){
+Char maze_solve(Boolean left, Boolean right, Boolean forward){
   if (left){
-    return "f";
+    return 'f';
   }
   else if (right){
-    return "f";
+    return 'f';
   }
   else if (forward){
-    return "l";
+    return 'l';
   }
   else if (left && right){
-    return "f";
+    return 'f';
   }
   else if (left && forward){
-    return "r";
+    return 'r';
   }
   else if (right && forward){
-    return "l";
+    return 'l';
   }
  
 }
