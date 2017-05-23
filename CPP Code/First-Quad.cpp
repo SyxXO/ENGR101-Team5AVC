@@ -66,6 +66,8 @@ int drive_forward(){ //make robot go to forward
    	set_motor_left(255);
    	set_motor_right(255);
    	sleep1(0,500000);
+   	set_motor_left(0);
+   	set_motor_right(0);
    	return 0;}
    	 
 int turn_left(int error){ //make robot go to left
@@ -139,13 +141,13 @@ bool right_wall(){ //detects if there is an obsticle to the right of the robot
 
 int main(){
    	init();
-   	int quadCnt=1;
+   	//int quadCnt=1;
    	int error;
-   	while(quadCnt=1){
+   	while(true){
 		if(front_wall()){
 			printf("Detected gate in the way");
 			wifi_gate();
-			prinff("Opened gate");
+			printf("Opened gate");
 			if(front_wall()){
 				printf("WiFi gate isn't open yet, waiting 2 seconds before trying to move/n");
 				sleep1(2,0);
@@ -156,7 +158,13 @@ int main(){
 			}
 		} else{
 			error = lineDirection(120);
-			drive_robot(error);
+			if(error<-10){
+				turn_left(error);
+			} else if(error>10){
+				turn_right(error);
+			} else if(error<10&&error>-10){
+				drive_forward();
+			}
 		}
 	}
    		 
