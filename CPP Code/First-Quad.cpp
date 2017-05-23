@@ -126,38 +126,26 @@ void wifi_gate(){ //opens the wifi gate
 }
 	
 bool front_wall(){ //detects if there is an obsticle infront of the robot
-	if(read_analog(0)>127){
-		return true;
-	} else {
-		return false;
-	}
+		return (read_analog(0)>127);
 }
 
 bool left_wall(){ //detects if there is an obsticle to the left of the robot
-	if(read_analog(1)>127){
-		return true;
-	} else {
-		return false;
-	}
+		return (read_analog(1)>127);
 }
 
 bool right_wall(){ //detects if there is an obsticle to the right of the robot
-	if(read_analog(2)>127){
-		return true;
-	} else {
-		return false;
-	}
+		return (read_analog(2)>127);
 }
 
 int main(){
-	
    	init();
    	int quadCnt=1;
    	int error;
-   	while(1=quadCnt){
+   	while(quadCnt=1){
 		if(front_wall()){
+			printf("Detected gate in the way");
 			wifi_gate();
-			sleep1(0,500000);
+			prinft("Opened gate");
 			if(front_wall()){
 				printf("WiFi gate isn't open yet, waiting 2 seconds before trying to move/n");
 				sleep1(2,0);
@@ -168,19 +156,9 @@ int main(){
 			}
 		} else{
 			error = lineDirection(120);
+			drive_robot(error);
 		}
-}
-		 //while(true){
-			error = lineDirection(120);
-			display_picture(5,0);
-			//if(error>10){turn_left(error);}
-   		 	//if(error<-10){turn_right(error);}
-   		 	//if(-10<error&&error<10){drive_forward();} 
-   		 	//if(error == 0){
-		//if(adc_reading()>400){drive_stop();}	
-		 //while(error == 0){drive_backward();}
-   		 	//}
-		// }
+	}
    		 
    		 return 0;}
  
