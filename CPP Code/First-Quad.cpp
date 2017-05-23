@@ -145,7 +145,7 @@ int main(){
 		if(front_wall()){
 			printf("Detected gate in the way");
 			wifi_gate();
-			prinft("Opened gate");
+			prinff("Opened gate");
 			if(front_wall()){
 				printf("WiFi gate isn't open yet, waiting 2 seconds before trying to move/n");
 				sleep1(2,0);
