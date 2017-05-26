@@ -11,6 +11,7 @@ int lineDirection(int ht){
 	int tol = 0;    //Tolerance for b/w values
 	char pix[32];   //Array for pixel rgb values
 	char w[32];     //Array to store white(255) or black(0)
+	
 	//Gets pixel rgb values and stores them in array pix[]+
 	take_picture();
 	//display_picture(3,0);
@@ -40,6 +41,7 @@ int lineDirection(int ht){
 	}
 	//Caclulates the error value for white line location
 	cnt = -16;
+	error = 0;
 	for(int a = 0;a<32;a++){
 		error = error + (w[a]*cnt);
 		cnt++;	
@@ -60,36 +62,36 @@ void set_motor_right(int speed){
 
 int drive_forward(){ //make robot go to forward
 	printf("Forward\n");
-   	set_motor_left(255);
-   	set_motor_right(255);
-   	sleep1(1,00000);
+   	set_motor_left(90);
+   	set_motor_right(90);
+   	sleep1(0,500000);
    	set_motor_left(0);
    	set_motor_right(0);
    	return 0;}
    	 
 int turn_left(int error){ //make robot go to left
 	printf("Left\n");
-   	set_motor_left(200);
-   	set_motor_right(4*error);
-   	sleep1(1,00000);
+   	set_motor_left(-90);
+   	set_motor_right(90);
+   	sleep1(0,300000);
    	set_motor_left(0);
    	set_motor_right(0);
    	return 0;}
    		 
 int turn_right(int error){ //make robot got to right
 	printf("right\n");
-	set_motor_left(-error*4);
-   	set_motor_right(200);
-   	sleep1(1,000000);
+	set_motor_left(-90);
+   	set_motor_right(90);
+   	sleep1(0,300000);
    	set_motor_left(0);
    	set_motor_right(0);
    	return 0;}
 
 int drive_backward(){ //make robot drive backwards
 	printf("backward\n");
-	set_motor_left(-100);//needs to make robot turn at an angle to avoid it looping movement//
+	set_motor_left(100);//needs to make robot turn at an angle to avoid it looping movement//
 	set_motor_right(-160);
-	sleep1(1,000000);
+	sleep1(0,300000);
 	set_motor_left(0);
    	set_motor_right(0);
    	return 0;}
@@ -157,18 +159,19 @@ int main(){
 				//error = 255/4;
 			//}
 			printf("%d\n", error);
-			if(error<-10&&error>10){
-				drive_backward();
-			}
-			if(error<-50){
-				turn_left(error);
-			} else if(error>50){
-				turn_right(error);
-			} else if(error<50&&error>-50){
-				drive_forward();
-			}
+			//if(get_white()<5){
+				//drive_backward();
+			//}else{
+				if(error>0){
+					turn_right(error);
+				} else if(error<0){
+					turn_left(error);
+				} else if(error=0){
+					drive_forward();
+				}
+			//}
 		}
 	}
    		 
-   		 return 0;}
+return 0;}
  
