@@ -32,10 +32,10 @@ int lineDirection(int ht){
 	for(int a = 0;a<32;a++){
 		if(pix[a]>tol){
 			w[a] = 1;
-			printf("White Pixel\n");
+			//printf("White Pixel\n");
 		}else if(pix[a]<tol){
 			w[a] = 0;
-			printf("Black Pixel\n");
+			//printf("Black Pixel\n");
 		}
 	}
 	for(int a =0;a<32;a++){
@@ -50,7 +50,7 @@ int lineDirection(int ht){
 	}
 	//Debug
 	
-	printf("%d",error);
+	//printf("%d",error);
 	return sf*error;
 }
 
@@ -63,37 +63,43 @@ void set_motor_right(int speed){
 }
 
 int drive_forward(){ //make robot go to forward
-	printf("Forward");
-   	set_motor_left(80);
-   	set_motor_right(80);
-   	sleep1(0,500000);
+	printf("Forward\n");
+   	set_motor_left(255);
+   	set_motor_right(255);
+   	sleep1(1,00000);
    	set_motor_left(0);
    	set_motor_right(0);
    	return 0;}
    	 
 int turn_left(int error){ //make robot go to left
-	printf("Left");
-   	set_motor_left(-error);
-   	set_motor_right(50);
-   	sleep1(0,500000);
+	printf("Left\n");
+   	set_motor_left(200);
+   	set_motor_right(4*error);
+   	sleep1(1,00000);
+   	set_motor_left(0);
+   	set_motor_right(0);
    	return 0;}
    		 
 int turn_right(int error){ //make robot got to right
-	printf("right");
-   	set_motor_left(50);
-   	set_motor_right(error);
-   	sleep1(0,500000);
+	printf("right\n");
+	set_motor_left(-error*4);
+   	set_motor_right(200);
+   	sleep1(1,000000);
+   	set_motor_left(0);
+   	set_motor_right(0);
    	return 0;}
 
 int drive_backward(){ //make robot drive backwards
-	printf("backward");
-	set_motor_left(-50);//needs to make robot turn at an angle to avoid it looping movement//
-	set_motor_right(-80);
-	sleep1(0,500000);
+	printf("backward\n");
+	set_motor_left(-100);//needs to make robot turn at an angle to avoid it looping movement//
+	set_motor_right(-160);
+	sleep1(1,000000);
+	set_motor_left(0);
+   	set_motor_right(0);
    	return 0;}
 
  int drive_stop(){ //make robot stop
-	 printf("stop");
+	 printf("stop\n");
 	 set_motor_left(0);
 	 set_motor_right(0);
 	 sleep1(0,500000);
@@ -155,7 +161,7 @@ int main(){
 				turn_left(error);
 			} else if(error>50){
 				turn_right(error);
-			} else if(error=0){
+			} else if(error<10&&error>-10){
 				drive_backward();
 			} else if(error<50&&error>-50){
 				drive_forward();
