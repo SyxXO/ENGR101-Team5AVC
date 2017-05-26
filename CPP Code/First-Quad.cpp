@@ -13,7 +13,7 @@ int lineDirection(int ht){
 	char w[32];     //Array to store white(255) or black(0)
 	//Gets pixel rgb values and stores them in array pix[]+
 	take_picture();
-	
+	//display_picture(3,0);
 	while(cnt<32){
 		pix[cnt] = get_pixel(ht,(cnt+1)*10,3);
 		cnt++;
@@ -38,14 +38,10 @@ int lineDirection(int ht){
 			//printf("Black Pixel\n");
 		}
 	}
-	for(int a =0;a<32;a++){
-		//printf("%d = %d\n",a,w[a]);
-	}
-	
 	//Caclulates the error value for white line location
-	cnt = 0;
-	for(int a = -16;a<16;a++){
-		error = error + (w[cnt]*a);
+	cnt = -16;
+	for(int a = 0;a<32;a++){
+		error = error + (w[a]*cnt);
 		cnt++;	
 	}
 	//Debug
@@ -157,12 +153,17 @@ int main(){
 			printf("Opened gate");
 		} else{
 			error = lineDirection(120);
+			//if(error>=255/4){
+				//error = 255/4;
+			//}
+			printf("%d\n", error);
+			if(error<-10&&error>10){
+				drive_backward();
+			}
 			if(error<-50){
 				turn_left(error);
 			} else if(error>50){
 				turn_right(error);
-			} else if(error<10&&error>-10){
-				drive_backward();
 			} else if(error<50&&error>-50){
 				drive_forward();
 			}
