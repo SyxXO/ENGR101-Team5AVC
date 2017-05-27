@@ -13,7 +13,7 @@ Repository for Team 5 Autonomous Vehicle Challenge
  - [x] Geordie - Set up team Github Repository
  - [x] Geordie - Keep GitHub up to date
  - [x] Geordie - Complete camera image processing
- - ~~Kevin - Complete code for straight line movement(Geordie and Zizi)~~
+ - ~~Kevin - Complete code for straight line movement~~(Geordie and Zizi)
  - [x] Kevin - Assign programmers with code objectives
  - [x] Shivaash - Complete team plan and agreement
  - [x] Shivaash - Get members to sign team agreement
