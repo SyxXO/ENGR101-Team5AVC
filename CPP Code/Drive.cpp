@@ -1,6 +1,29 @@
 #include <stdio.h>
 #include "E101.h"
 
+int get_error(){
+	take_picture();
+	int sum = 0;
+	int kp = 0.5;
+	int pix[320];
+	int max=0, min=0;
+	// Gets pixels at height 120 and stores in an array
+	for(int a=0;a<320;a++){
+		pix[a] = get_pixel(a,120,3);
+	}
+	// Calculates threashold value
+	for(int a=0;a<320;a++){
+		if(pix[a]>max){max=pix[a];}
+		else if(pix[a]<min){min=pix[a];}
+	}
+	double threshold = (max+min)/2;
+	// Calculates error sum
+	for(int a=0;a<320;a++){
+		if(pix[a]>threshold){sum = sum + ((a-160)*255);}
+	}
+	return sum*kp;
+}
+
 void wifi_gate(){ //opens the wifi gate
         char ip[15];
         char please[24];
