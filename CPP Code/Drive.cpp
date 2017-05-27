@@ -3,9 +3,9 @@
 
 // Fields
 float kP = 0.5;      // kP value defined by user
-int currError = 0; // Current error value calculated by get_error()
-int whitePix = 0;  // Current white pixels detected by camera
-int minWhite = 10; // Minimum white pixels required to detects a line
+int currError = 0;   // Current error value calculated by get_error()
+int whitePix = 0;    // Current white pixels detected by camera
+int minWhite = 10;   // Minimum white pixels required to detects a line
 
 // Opens the WiFi gate
 void open_gate(){
