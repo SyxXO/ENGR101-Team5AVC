@@ -45,8 +45,8 @@ int get_error(){
 	return ((sum*kP)/(160*1*kP))*255;
 }
 
-// Turns the motors with respect to the current currError value
-// Drives backwards if the line wasn't detected
+// Turns the motors with respect to the current totalError value
+// Drives backwards at an angle if the line wasn't detected
 void drive(){
 	if(whitePix>minWhite){
 		if(totalError<0){
