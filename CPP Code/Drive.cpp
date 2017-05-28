@@ -66,6 +66,7 @@ void drive(){
 
 // Navigates quadrants one and two
 int main(){
+	init();
 	while(true){
 		if(read_analog(0)>215){
 			open_gate();
