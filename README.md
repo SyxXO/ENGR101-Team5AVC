@@ -40,9 +40,7 @@ Repository for Team 5 Autonomous Vehicle Challenge
 ### Week Three Checklist:
  - [x] Zizi - Finishing the movement methods and getting it ready for testing (+built robot chassis)
  - [x] Kevin - Getting the robot onto the maze and have it succssfully move(+built robot chassis)
- 
- ~~- Geordie - Implementation of maze-solving algorithim~~ (Bug fixed quad one and two errors, built robot chassis)
+ - ~~Geordie - Implementation of maze-solving algorithim~~ (Bug fixed quad one and two errors, built robot chassis)
  - [ ] Felix - 
- 
- ~~- Shivaash - Assisting Hendrik with the construction and planning possible imrpovements such as for further quadrants~~ (built robot chassis)
+ - ~~Shivaash - Assisting Hendrik with the construction and planning possible imrpovements such as for further quadrants~~ (built robot chassis)
  - [ ] Hendrik - Testing out the base, and planning possible improvments for the physical build
